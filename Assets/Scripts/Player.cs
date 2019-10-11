@@ -21,6 +21,14 @@ public class Player : MonoBehaviour {
     public GameObject spawner;
     public GameObject restartDisplay;
 
+    public AudioClip clip; 
+    public float volume = 1f;
+
+    private void Start(){
+        //plays nice nice nice audio at start
+        AudioSource.PlayClipAtPoint(clip,new Vector3(0,0,-10),volume);
+    }
+
     private void Update()
     {
 
