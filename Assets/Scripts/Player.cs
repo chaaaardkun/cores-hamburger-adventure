@@ -35,11 +35,9 @@ public class Player : MonoBehaviour {
         transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxY) {
-            camAnim.SetTrigger("shake");
             Instantiate(moveEffect, transform.position, Quaternion.identity);
             targetPos = new Vector2(transform.position.x, transform.position.y + increment);
         } else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minY) {
-            camAnim.SetTrigger("shake");
             Instantiate(moveEffect, transform.position, Quaternion.identity);
             targetPos = new Vector2(transform.position.x, transform.position.y - increment);
         }
