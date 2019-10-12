@@ -635,10 +635,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: db0add2c-88bc-4585-b2ad-74669092da28
   framebufferDepthMemorylessMode: 0
-  projectName: Template_2D
-  organizationId: 
+  projectName: EndlessRunnerYotube
+  organizationId: raigekieraven
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
