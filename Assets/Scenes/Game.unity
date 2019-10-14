@@ -1121,6 +1121,8 @@ MonoBehaviour:
   increment: 5
   maxY: 5
   minY: -5
+  scoreman: {fileID: 1045463230}
+  score: 0
   health: 3
   moveEffect: {fileID: 1414099114102734, guid: b39c016ae3b89bf439f1499ba32b9b53, type: 3}
   camAnim: {fileID: 519420030}

@@ -10,6 +10,9 @@ public class Player : MonoBehaviour {
     public float maxY;
     public float minY;
 
+    public GameObject scoreman;
+    public int score;
+
     private Vector2 targetPos;
 
     public int health;
@@ -34,6 +37,7 @@ public class Player : MonoBehaviour {
 
         if (health <= 0) {
             spawner.SetActive(false);
+            score = scoreman.GetComponent<Score>().score;
             restartDisplay.SetActive(true);
             Destroy(gameObject);
         }
