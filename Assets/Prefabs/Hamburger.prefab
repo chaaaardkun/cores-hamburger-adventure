@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8778338000405176142}
   - component: {fileID: 8669675794054241332}
   - component: {fileID: 8725634470195309830}
-  - component: {fileID: 8146844499298292573}
+  - component: {fileID: -569448834944720462}
   m_Layer: 0
   m_Name: Hamburger
   m_TagString: Untagged
@@ -73,12 +73,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 66dbd8e549e0e184688cb07d8964e766, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4cb698e4c32a74de4bc815d179adba9c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 12, y: 12}
+  m_Size: {x: 7.5, y: 7.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -118,7 +118,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.11935331, y: 0}
   serializedVersion: 2
-  m_Radius: 5.461111
+  m_Radius: 2.8
 --- !u!114 &8725634470195309830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 10
---- !u!114 &8146844499298292573
+--- !u!114 &-569448834944720462
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,13 +141,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8685050627334131772}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1bc8d01835975443bc62fa48e6ffbf7, type: 3}
+  m_Script: {fileID: 11500000, guid: dac031763cd0743faafb4b097afd8dcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
   effect: {fileID: 1009277942065174, guid: 02aa361cf5f058a448a8ca73948b4423, type: 3}
   clip:
   - {fileID: 8300000, guid: c5e1a7477a0c7a24bb0adcf0151edc6b, type: 3}
-  - {fileID: 8300000, guid: 177db50ae9161b04293041db9b909b3a, type: 3}
   - {fileID: 8300000, guid: e30100e666e21674d853bb5cc309d141, type: 3}
+  - {fileID: 8300000, guid: 177db50ae9161b04293041db9b909b3a, type: 3}
   volume: 1

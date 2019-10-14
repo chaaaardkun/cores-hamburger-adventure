@@ -8,7 +8,21 @@ public class ObstacleSpawn : MonoBehaviour {
 
     private void Start()
     {
-        int rand = Random.Range(0, obstacle.Length);
-        Instantiate(obstacle[rand], transform.position, Quaternion.identity);
+        int probability = Random.Range(1, 101);
+        int randUps;
+        int obsEffect;
+
+        if (probability >=95){
+            randUps = Random.Range(1,3);
+            spawnObstacle(randUps);
+        }
+        else{
+            obsEffect = 0;
+            spawnObstacle(obsEffect);
+        }   
+    }
+
+    private void spawnObstacle(int obsEffect){
+        Instantiate(obstacle[obsEffect], transform.position, Quaternion.identity);
     }
 }
