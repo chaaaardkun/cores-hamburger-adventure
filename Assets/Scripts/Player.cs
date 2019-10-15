@@ -15,6 +15,10 @@ public class Player : MonoBehaviour {
     public int loadscore;
     public Text scoredisp;
     public Text hiscore;
+    public GameObject h;
+    public GameObject s;
+    public GameObject h1;
+    public GameObject s1;
 
     private Vector2 targetPos;
 
@@ -48,6 +52,10 @@ public class Player : MonoBehaviour {
             }
             restartDisplay.SetActive(true);
             scoredisp.text = score.ToString();
+            h.SetActive(false);
+            s.SetActive(false);
+            h1.SetActive(false);
+            s1.SetActive(false);
             hiscore.text = loadscore.ToString();
             Destroy(gameObject);
         }
