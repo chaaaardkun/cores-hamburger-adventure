@@ -23,7 +23,7 @@ public class Spawner : MonoBehaviour {
         Obstacle.speed = speed;
         Hamburger.speed = speed;
         counter += Time.deltaTime;
-        if (counter >= 10 && speed < 200) {
+        if (counter >= 10 && speed <= 100f) {
             speed += 5F;
             counter = 0;
         }
