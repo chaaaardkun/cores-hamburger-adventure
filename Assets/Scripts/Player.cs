@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
-using UnityEngine.Advertisements;
+// using UnityEngine.Advertisements;
 
 public class Player : MonoBehaviour {
 
@@ -22,10 +22,7 @@ public class Player : MonoBehaviour {
     public bool filefound = false;
     public Text scoredisp;
     public Text hiscore;
-    public GameObject h;
-    public GameObject s;
-    public GameObject h1;
-    public GameObject s1;
+    public GameObject inGameUI;
 
     private Vector2 targetPos;
 
@@ -45,14 +42,14 @@ public class Player : MonoBehaviour {
         //plays nice nice nice audio at start
         AudioSource.PlayClipAtPoint(clip,new Vector3(0,0,-10),volume);
 
-        Advertisement.Initialize(gameId, testMode);
+        // Advertisement.Initialize(gameId, testMode);
     }
 
     private void Update()
     {
 
         if (health <= 0) {
-            Advertisement.Show();
+            // Advertisement.Show();
 
             spawner.SetActive(false);
             score = scoreman.GetComponent<Score>().score;
@@ -71,10 +68,7 @@ public class Player : MonoBehaviour {
             }
             restartDisplay.SetActive(true);
             scoredisp.text = score.ToString();
-            h.SetActive(false);
-            s.SetActive(false);
-            h1.SetActive(false);
-            s1.SetActive(false);
+            inGameUI.SetActive(false);
             hiscore.text = loadscore.ToString();
             Destroy(gameObject);
         }
