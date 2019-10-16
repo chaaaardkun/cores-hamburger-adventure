@@ -3,8 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using UnityEngine.Advertisements;
 
 public class Player : MonoBehaviour {
+
+    public string gameId = "3323565";
+    public bool testMode = true;
+
 
     public float speed;
     public float increment;
@@ -39,12 +44,16 @@ public class Player : MonoBehaviour {
     private void Start(){
         //plays nice nice nice audio at start
         AudioSource.PlayClipAtPoint(clip,new Vector3(0,0,-10),volume);
+
+        Advertisement.Initialize(gameId, testMode);
     }
 
     private void Update()
     {
 
         if (health <= 0) {
+            Advertisement.Show();
+
             spawner.SetActive(false);
             score = scoreman.GetComponent<Score>().score;
             LoadPlayer();
