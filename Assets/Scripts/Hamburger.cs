@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Hamburger : MonoBehaviour
 {
-    public float speed;
+    public static float speed;
     public GameObject effect;
     public AudioClip[] clip; 
     public float volume = 1f;

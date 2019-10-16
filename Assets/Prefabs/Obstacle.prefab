@@ -131,8 +131,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00f8a9d1224df3443971291524bce728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
   effect: {fileID: 1009277942065174, guid: 02aa361cf5f058a448a8ca73948b4423, type: 3}
+  spawner: {fileID: 7240392865850593627, guid: cc8f6394c408c4c1195cf66524a988ba, type: 3}
   clip: {fileID: 8300000, guid: 7da43d68a1e48c741bc485f02a510049, type: 3}
   volume: 1
 --- !u!114 &114499529855895570
