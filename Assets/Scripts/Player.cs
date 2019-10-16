@@ -12,6 +12,13 @@ public class Player : MonoBehaviour {
 
     public GameObject scoreman;
     public int score;
+    public int loadscore;
+    public Text scoredisp;
+    public Text hiscore;
+    public GameObject h;
+    public GameObject s;
+    public GameObject h1;
+    public GameObject s1;
 
     private Vector2 targetPos;
 
@@ -38,7 +45,18 @@ public class Player : MonoBehaviour {
         if (health <= 0) {
             spawner.SetActive(false);
             score = scoreman.GetComponent<Score>().score;
+            LoadPlayer();
+            if(loadscore < score)
+            {
+                SavePlayer();
+            }
             restartDisplay.SetActive(true);
+            scoredisp.text = score.ToString();
+            h.SetActive(false);
+            s.SetActive(false);
+            h1.SetActive(false);
+            s1.SetActive(false);
+            hiscore.text = loadscore.ToString();
             Destroy(gameObject);
         }
 
@@ -53,5 +71,16 @@ public class Player : MonoBehaviour {
             Instantiate(moveEffect, transform.position, Quaternion.identity);
             targetPos = new Vector2(transform.position.x, transform.position.y - increment);
         }
+    }
+
+    public void SavePlayer()
+    {
+        SaveSystem.SavePlayer(this);
+    }
+
+    public void LoadPlayer()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+        loadscore = data.score;
     }
 }

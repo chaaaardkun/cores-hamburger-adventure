@@ -8,6 +8,8 @@ public class Spawner : MonoBehaviour {
     public float startTimeBtwSpawns;
     public float timeDecrease;
     public float minTime;
+    public float counter = 0;
+    public float speed = 20F;
 
     public GameObject[] obstacleTemplate;
 
@@ -18,6 +20,13 @@ public class Spawner : MonoBehaviour {
 
     private void Update()
     {
+        Obstacle.speed = speed;
+        Hamburger.speed = speed;
+        counter += Time.deltaTime;
+        if (counter >= 10 && speed <= 100f) {
+            speed += 5F;
+            counter = 0;
+        }
         if (timeBtwSpawns <= 0)
         {
             int posRand = Random.Range(0, obstacleTemplate.Length);

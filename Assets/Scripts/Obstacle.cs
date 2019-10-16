@@ -4,32 +4,14 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour {
 
-    public float speed;
-    float counter = 0;
+    public static float speed;
     public GameObject effect;
+    public GameObject spawner;
     public AudioClip clip; 
     public float volume = 1f;
+
 	void Update () {
-        transform.Translate(Vector2.left * speed * Time.deltaTime);
-        //Increment Counter
-        print(speed);
-        counter += Time.deltaTime;
-        print(counter);
-
-        if (counter >= 3)
-        {
-            //Increment Speed by 4
-            incrementSpeed();
-
-            //RESET Counter
-            counter = 0;
-        }
-    }
-
-    void incrementSpeed()
-    {
-        print("speed");
-        speed += 50;
+        transform.Translate(Vector2.left * Time.deltaTime * speed);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
