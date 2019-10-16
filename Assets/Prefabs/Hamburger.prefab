@@ -144,8 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dac031763cd0743faafb4b097afd8dcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  effect: {fileID: 1009277942065174, guid: 02aa361cf5f058a448a8ca73948b4423, type: 3}
+  effect: {fileID: 4280988227762745447, guid: 487eb38619e104638a3a059f3d67d5e0, type: 3}
   clip:
   - {fileID: 8300000, guid: c5e1a7477a0c7a24bb0adcf0151edc6b, type: 3}
   - {fileID: 8300000, guid: e30100e666e21674d853bb5cc309d141, type: 3}
