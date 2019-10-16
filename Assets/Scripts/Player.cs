@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 
 public class Player : MonoBehaviour {
 
@@ -13,6 +14,7 @@ public class Player : MonoBehaviour {
     public GameObject scoreman;
     public int score;
     public int loadscore;
+    public bool filefound = false;
     public Text scoredisp;
     public Text hiscore;
     public GameObject h;
@@ -46,9 +48,17 @@ public class Player : MonoBehaviour {
             spawner.SetActive(false);
             score = scoreman.GetComponent<Score>().score;
             LoadPlayer();
-            if(loadscore < score)
+            if(filefound == true)
+            {
+                if (loadscore < score)
+                {
+                    SavePlayer();
+                }
+            }
+            else
             {
                 SavePlayer();
+                LoadPlayer();
             }
             restartDisplay.SetActive(true);
             scoredisp.text = score.ToString();
@@ -81,6 +91,16 @@ public class Player : MonoBehaviour {
     public void LoadPlayer()
     {
         PlayerData data = SaveSystem.LoadPlayer();
-        loadscore = data.score;
+        
+        if (data == null)
+        {
+            filefound = false;
+        }
+        else
+        {
+            filefound = true;
+            loadscore = data.score;
+        }
+            
     }
 }
