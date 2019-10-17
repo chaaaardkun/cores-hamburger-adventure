@@ -10,6 +10,8 @@ public class Player : MonoBehaviour {
     public string gameId = "3323565";
     public bool testMode = true;
 
+    private bool up = false;
+    private bool down = false;
 
     public float speed;
     public float increment;
@@ -43,6 +45,11 @@ public class Player : MonoBehaviour {
         AudioSource.PlayClipAtPoint(clip,new Vector3(0,0,-10),volume);
 
         // Advertisement.Initialize(gameId, testMode);
+    }
+
+    private void Awake()
+    {
+        SwipeDetector.OnSwipe += SwipeDetector_OnSwipe;
     }
 
     private void Update()
@@ -85,6 +92,17 @@ public class Player : MonoBehaviour {
             Instantiate(moveEffect, transform.position, Quaternion.identity);
             targetPos = new Vector2(transform.position.x, transform.position.y - increment);
         }
+        if(up == true && transform.position.y < maxY)
+        {
+            Instantiate(moveEffect, transform.position, Quaternion.identity);
+            targetPos = new Vector2(transform.position.x, transform.position.y + increment);
+            up = false;
+        }
+        else if(down == true && transform.position.y > minY)
+        {
+            Instantiate(moveEffect, transform.position, Quaternion.identity);
+            targetPos = new Vector2(transform.position.x, transform.position.y - increment);
+        }
     }
 
     public void SavePlayer()
@@ -106,5 +124,13 @@ public class Player : MonoBehaviour {
             loadscore = data.score;
         }
             
+    }
+
+    private void SwipeDetector_OnSwipe(SwipeData data)
+    {
+        if(data.Direction == SwipeDirection.Up)
+        {
+
+        }
     }
 }
